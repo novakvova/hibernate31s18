@@ -28,6 +28,8 @@
 
 		<!-- Annotated entity classes -->
 		<mapping class="Coffee" />
+		<mapping class="Category" />
+		<mapping class="Post" />
 
 	</session-factory>
 
