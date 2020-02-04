@@ -22,17 +22,20 @@ public class MainApp {
 			Session session = sessionFactory.openSession();
 			session.beginTransaction();
 			
+//			Category category = new Category();
+//			category.setName("Бомба");
+//			session.save(category);
+			
 			Category category = new Category();
-			category.setName("Бомба");
-			session.save(category);
+			category.setId(1);
 			
 			Post post = new Post();
-			post.setName("Короно вірус атакує");
+			post.setName("ssdfsdfs");
 			post.setCategory(category);
 			session.save(post);
 			
 			Post post2 = new Post();
-			post2.setName("Атака китайців на Україну");
+			post2.setName("000000000000");
 			post2.setCategory(category);
 			session.save(post2);
 			
