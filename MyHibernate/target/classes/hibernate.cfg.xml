@@ -30,6 +30,7 @@
 		<mapping class="Coffee" />
 		<mapping class="Category" />
 		<mapping class="Post" />
+		<mapping class="Tag"/> 
 
 	</session-factory>
 

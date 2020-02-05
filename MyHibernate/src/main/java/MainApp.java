@@ -20,26 +20,26 @@ public class MainApp {
 			sessionFactory = new MetadataSources(registry).buildMetadata().buildSessionFactory();
 			System.out.println("-----Connection succes------");
 			Session session = sessionFactory.openSession();
-			session.beginTransaction();
+			//session.beginTransaction();
 			
 //			Category category = new Category();
 //			category.setName("Бомба");
 //			session.save(category);
 			
-			Category category = new Category();
-			category.setId(1);
-			
-			Post post = new Post();
-			post.setName("ssdfsdfs");
-			post.setCategory(category);
-			session.save(post);
-			
-			Post post2 = new Post();
-			post2.setName("000000000000");
-			post2.setCategory(category);
-			session.save(post2);
-			
-			session.getTransaction().commit();
+//			Category category = new Category();
+//			category.setId(1);
+//			
+//			Post post = new Post();
+//			post.setName("ssdfsdfs");
+//			post.setCategory(category);
+//			session.save(post);
+//			
+//			Post post2 = new Post();
+//			post2.setName("000000000000");
+//			post2.setCategory(category);
+//			session.save(post2);
+//			
+//			session.getTransaction().commit();
 //			Coffee coffee = new Coffee();
 //			coffee.setName("Name");
 //			coffee.setImage("image");

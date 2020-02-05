@@ -1,43 +1,35 @@
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "tblPosts")
-public class Post {
+@Table(name = "tblTags")
+public class Tag {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "post_id")
+	@Column(name = "tag_id")
 	private long id;
 	
 	@Column(name = "name", length = 255, nullable = false)
     private String name;
 	
-	@ManyToOne
-    @JoinColumn(name = "category_id", nullable = false)
-    private Category category;
 	
-    @ManyToMany(cascade = {CascadeType.ALL})
-    @JoinTable(name="tblPostTags", joinColumns= {@JoinColumn(name="post_id")},  inverseJoinColumns= {@JoinColumn(name="tag_id")})
-    private Set<Tag> tags = new HashSet<Tag>();
+	@ManyToMany(mappedBy="tags")
+    private Set<Post> posts = new HashSet<Post>();
 	
-	public Category getCategory() {
-		return category;
+	public Set<Post> getPosts() {
+		return posts;
 	}
 
-	public void setCategory(Category category) {
-		this.category = category;
+	public void setPosts(Set<Post> posts) {
+		this.posts = posts;
 	}
 
 	public long getId() {
@@ -56,3 +48,4 @@ public class Post {
 		this.name = name;
 	}
 }
+
